@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 	include BCrypt
 	attr_accessor :password
 	before_save :encrypt_password
+	before_save :create_unique_profile_id
 
 	validates_confirmation_of :password, :message => "Password do not match."
 	validates_presence_of :password, :message => "Please Enter a password."
@@ -26,5 +27,10 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def create_unique_profile_id
+		begin
+			self.profile_id = SecureRandom.hex(8)
+		end while self.class.exists?(:profile_id => profile_id)
+	end
 
 end

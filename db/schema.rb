@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218164256) do
+ActiveRecord::Schema.define(version: 20141218203759) do
 
   create_table "scribbles", force: true do |t|
     t.string   "post"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20141218164256) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "profile_name",  default: "beamer"
+    t.string   "profile_id",                       null: false
   end
 
 end
