@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -185,3 +186,25 @@
 </script>
 
 </html>   
+=======
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Social Network on Ruby on Rails" />
+  <meta name="keywords" content="social network networking ruby on rails" />
+  <title><%= @title || SITE_NAME %></title>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application' %>
+</head>
+<body>
+	<% if current_user %>
+		<%= render :template=>'layouts/sessioned'%>
+	<% else %>
+	<%= render :template=>'layouts/non_sessioned'%>
+	<% end %>
+</body>
+</html>
+>>>>>>> 4b8e69ea254d2d0a600101f59c79742d9204ff20
