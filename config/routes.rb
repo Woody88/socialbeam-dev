@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'messages/index'
+
+  get 'messages/createx'
+
+  get 'messages/new'
+
+  get 'messages/create'
+
+  get 'messages/show'
+
+  get 'messages/delete_multiple'
+
   root 'browse#home'
   get 'browse/profile'
   get 'browse/message'
